@@ -19,14 +19,14 @@
 export default {
    props: ['propsData'],
    methods: {
-      removeTodo: function (item, index) {
-         localStorage.removeItem(item);
-         this.todoItems.splice(index, 1);
+      removeTodo: function (todoItem, index) {
+         this.$emit('removeItem', todoItem, index);
+         localStorage.removeItem(todoItem);
       },
-      toggleCompleted: function (item, index) {
-         item.completed = !item.completed;
-         localStorage.removeItem(item.item);
-         localStorage.setItem(item.item, JSON.stringify(item));
+      toggleCompleted: function (todoItem, index) {
+         todoItem.completed = !todoItem.completed;
+         localStorage.removeItem(todoItem.item);
+         localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
       },
    },
 };
