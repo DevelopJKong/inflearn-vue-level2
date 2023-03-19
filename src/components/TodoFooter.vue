@@ -1,7 +1,7 @@
 <template>
-  <div></div>
+  <footer>Footer</footer>
 </template>
-<script>
+<script lang="js">
 console.log("hello");
 export default {};
 </script>

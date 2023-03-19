@@ -4,7 +4,7 @@
     <h1>To Do it!</h1>
   </header>
 </template>
-<script>
+<script lang="js">
 // JavaScript
 console.log("todo header");
 export default {};
