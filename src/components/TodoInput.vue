@@ -1,11 +1,11 @@
 <!-- ! HTML -->
 <template>
-  <div class="input-box shadow">
-    <input type="text" v-model="newTodoItem" />
-    <span class="add-container">
-      <i class="fas fa-plus add-btn" v-on:click="addTodo"></i>
-    </span>
-  </div>
+   <div class="input-box shadow">
+      <input type="text" v-model="newTodoItem" />
+      <span class="add-container">
+         <i class="fas fa-plus add-btn" v-on:click="addTodo"></i>
+      </span>
+   </div>
 </template>
 <!-- * JAVASCRIPT -->
 <script lang="js">
@@ -17,8 +17,11 @@ export default {
     },
     methods: {
         addTodo: function () {
-            localStorage.setItem(this.newTodoItem, this.newTodoItem);
-            this.clearInput();
+            if(this.newTodoItem !== "") {
+                const obj = { completed:false, item: this.newTodoItem};
+                localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+                this.clearInput();
+            }
         },
         clearInput: function () {
             this.newTodoItem = "";
@@ -29,32 +32,32 @@ export default {
 <!-- ? CSS -->
 <style>
 input:focus {
-  outline: none;
+   outline: none;
 }
 
 .input-box {
-  background-color: white;
-  height: 50px;
-  line-height: 50px;
-  border-radius: 5px;
+   background-color: white;
+   height: 50px;
+   line-height: 50px;
+   border-radius: 5px;
 }
 
 .input-box input {
-  width: 80%;
-  border-style: none;
-  font-size: 0.9rem;
+   width: 80%;
+   border-style: none;
+   font-size: 0.9rem;
 }
 
 .add-container {
-  float: right;
-  background: linear-gradient(to right, #6478fb, #8763fb);
-  display: block;
-  width: 3rem;
-  border-radius: 0 5px 5px 0;
+   float: right;
+   background: linear-gradient(to right, #6478fb, #8763fb);
+   display: block;
+   width: 3rem;
+   border-radius: 0 5px 5px 0;
 }
 
 .add-btn {
-  color: white;
-  vertical-align: middle;
+   color: white;
+   vertical-align: middle;
 }
 </style>

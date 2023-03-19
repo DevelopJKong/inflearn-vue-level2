@@ -1,42 +1,42 @@
 <template>
-  <TodoHeader></TodoHeader>
-  <TodoInput></TodoInput>
-  <TodoList></TodoList>
-  <TodoFooter></TodoFooter>
+   <TodoHeader></TodoHeader>
+   <TodoInput></TodoInput>
+   <TodoList></TodoList>
+   <TodoFooter></TodoFooter>
 </template>
 
 <script>
-import TodoHeader from "./components/TodoHeader.vue";
-import TodoFooter from "./components/TodoFooter.vue";
-import TodoInput from "./components/TodoInput.vue";
-import TodoList from "./components/TodoList.vue";
+import TodoHeader from './components/TodoHeader.vue';
+import TodoFooter from './components/TodoFooter.vue';
+import TodoInput from './components/TodoInput.vue';
+import TodoList from './components/TodoList.vue';
 export default {
-  name: "App",
-  components: {
-    TodoHeader,
-    TodoFooter,
-    TodoInput,
-    TodoList,
-  },
+   name: 'App',
+   components: {
+      TodoHeader,
+      TodoFooter,
+      TodoInput,
+      TodoList,
+   },
 };
 </script>
 
 <style>
 body {
-  text-align: center;
-  background-color: #f6f6f6;
+   text-align: center;
+   background-color: #f6f6f6;
 }
 
 input {
-  border-style: groove;
-  width: 200px;
+   border-style: groove;
+   width: 200px;
 }
 
 button {
-  border-style: groove;
+   border-style: groove;
 }
 
 .shadow {
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.03);
+   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.03);
 }
 </style>
