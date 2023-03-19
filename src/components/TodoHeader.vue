@@ -6,7 +6,6 @@
 </template>
 <script lang="js">
 // JavaScript
-console.log("todo header");
 export default {};
 </script>
 <style scoped>
