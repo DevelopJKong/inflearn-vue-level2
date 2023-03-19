@@ -4,7 +4,7 @@
       <h1>To Do it!</h1>
    </header>
 </template>
-<script lang="js">
+<script>
 // JavaScript
 export default {};
 </script>

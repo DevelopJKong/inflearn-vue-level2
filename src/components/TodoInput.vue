@@ -8,25 +8,25 @@
    </div>
 </template>
 <!-- * JAVASCRIPT -->
-<script lang="js">
+<script>
 export default {
-    data: function() {
-        return {
-            newTodoItem:""
-        }
-    },
-    methods: {
-        addTodo: function () {
-            if(this.newTodoItem !== "") {
-                const obj = { completed:false, item: this.newTodoItem};
-                localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
-                this.clearInput();
-            }
-        },
-        clearInput: function () {
-            this.newTodoItem = "";
-        }
-    }
+   data: function () {
+      return {
+         newTodoItem: '',
+      };
+   },
+   methods: {
+      addTodo: function () {
+         if (this.newTodoItem !== '') {
+            const obj = { completed: false, item: this.newTodoItem };
+            localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+            this.clearInput();
+         }
+      },
+      clearInput: function () {
+         this.newTodoItem = '';
+      },
+   },
 };
 </script>
 <!-- ? CSS -->

@@ -15,33 +15,19 @@
       </ul>
    </div>
 </template>
-<script lang="js">
+<script>
 export default {
-
-    data: function () {
-        return {
-            todoItems: []
-        }
-    },
-    created:function () {
-        if(localStorage.length > 0 ) {
-            for (let i = 0; i < localStorage.length; i++) {
-                this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-            }
-        }
-    },
-    methods:{
-        removeTodo: function (item,index) {
-            localStorage.removeItem(item);
-            this.todoItems.splice(index,1);
-        },
-        toggleCompleted: function (item,index) {
-            item.completed = !item.completed;
-            localStorage.removeItem(item.item);
-            localStorage.setItem(item.item, JSON.stringify(item));
-        }
-
-    }
+   methods: {
+      removeTodo: function (item, index) {
+         localStorage.removeItem(item);
+         this.todoItems.splice(index, 1);
+      },
+      toggleCompleted: function (item, index) {
+         item.completed = !item.completed;
+         localStorage.removeItem(item.item);
+         localStorage.setItem(item.item, JSON.stringify(item));
+      },
+   },
 };
 </script>
 <style scoped>

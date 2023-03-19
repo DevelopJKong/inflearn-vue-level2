@@ -3,13 +3,13 @@
       <span class="clearAllBtn" v-on:click="clearTodo">Clear All</span>
    </footer>
 </template>
-<script lang="js">
+<script>
 export default {
    methods: {
       clearTodo: function () {
          localStorage.clear();
-      }
-   }
+      },
+   },
 };
 </script>
 <style scoped>

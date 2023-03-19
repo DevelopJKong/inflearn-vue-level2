@@ -11,6 +11,18 @@ import TodoFooter from './components/TodoFooter.vue';
 import TodoInput from './components/TodoInput.vue';
 import TodoList from './components/TodoList.vue';
 export default {
+   data: function () {
+      return {
+         todoItems: [],
+      };
+   },
+   created: function () {
+      if (localStorage.length > 0) {
+         for (let i = 0; i < localStorage.length; i++) {
+            this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+         }
+      }
+   },
    name: 'App',
    components: {
       TodoHeader,
