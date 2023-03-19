@@ -21,12 +21,9 @@ export default {
    methods: {
       removeTodo: function (todoItem, index) {
          this.$emit('removeItem', todoItem, index);
-         localStorage.removeItem(todoItem);
       },
       toggleCompleted: function (todoItem, index) {
-         todoItem.completed = !todoItem.completed;
-         localStorage.removeItem(todoItem.item);
-         localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+         this.$emit('toggleItem', todoItem, index);
       },
    },
 };
